@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flower field</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .back {
+            
+            background: url("back.jpg");
+            background-size: cover; /* Adjusted to cover full screen */
+            /* Set to full viewport width */
+            background-position: center;
+            padding: 10px 8%;
+            position: relative;
+        }
+        .score {
+            font-size: 20px; /* Increase font size */
+            margin-top: 5px;
+color:brown;
+        }
+        #speakbtn {
+        background-color: red;
+        border: 2px solid blue;
+        height: 50px;
+        width: 80px;
+        padding: 5px; /* Adjust padding as needed */
+    }
+
+    #speakbtn:hover {
+        background-color: blue; /* Change background color on hover */
+        color: white; /* Change text color on hover */
+    }
+
+    #speakbtn img {
+        vertical-align: middle; /* Align the image vertically */
+        margin-right: 5px; /* Add space between image and text */
+    }
+    #one-player-btn, #two-player-btn {
+            background-color: rgb(81, 81, 223);
+            height:50px;
+            width:100px;
+        }
+
+        #one-player-btn:hover, #two-player-btn:hover {
+            background-color:rgb(48, 48, 146);
+            transform: scale(1.05);
+        }
+        #reset-btn:hover, #new-btn:hover {
+            background-color: #2e4a99;
+            transform: scale(1.05);
+        }
+    </style>
+ </head>
+ 
+ <body>
+    
+    <div class="back">
+    <h1>Text-to-Speech</h1>
+
+    <textarea id="textbox" rows="4" cols="50"></textarea><br>
+   
+        <button id="speakbtn" onclick="speak()">
+            <img src="speaker.jpg" alt="Speak" style="width: 20px; height: 20px;">
+            Speak
+        </button>
+    <div class="count" style="margin-top: 20px;">
+        <h1 style="color:blue; display: inline-block;">O   :</h1>
+        <h1 style="color:red; display: inline-block;">:   X</h1>
+        <div class="score">
+          <b>  <span id="OWins">0</span> - <span id="XWins">0</span></b>
+        </div>
+    </div>
+    
+
+     <div class="msg-container hide">
+        <p id="msg">Winner</p>
+        <button id="new-btn">New Game</button>
+        
+     </div>
+     
+    <main>
+        <a href="wallapaper.html">
+            <img src="arrow.jpg" alt="Previous" style="width: 50px; height: 50px;position: relative;bottom:100px;right:600px;"></a>
+            <div>
+                <button id="one-player-btn">1 Player</button>
+                <button id="two-player-btn">2 Players</button>
+            </div>
+        <h1>Tic Tac Toe</h1>
+        <div class="container">
+        <div class="game">
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+        </div>
+    </div>
+    <button id="reset-btn">Reset Game</button>
+        
+    </main>
+    </div>
+    <script>
+        document.getElementById("one-player-btn").addEventListener("click", function() {
+            loadScript("app1.js");
+        });
+    
+        document.getElementById("two-player-btn").addEventListener("click", function() {
+            loadScript("app2.js");
+        });
+    
+        function loadScript(src) {
+            var script = document.createElement("script");
+            script.src = src;
+            document.head.appendChild(script);
+        }
+    
+        function speak() {
+            var text = document.getElementById('textbox').value;
+            var speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+   
+    
+    
+    
+    
+    
+    
+    
+</body>
+ </html>

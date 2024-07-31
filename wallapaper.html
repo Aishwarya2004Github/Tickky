@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wallapaper</title>
+    <style>
+         body {
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+        }
+
+        .back {
+            background: url("night.jpg");
+            background-size: cover; /* Adjusted to cover full screen */
+            /* Keeps background fixed while scrolling */
+            height: 97vh; /* Set to full viewport height */
+            width:84vw; /* Set to full viewport width */
+            background-position: center;
+            padding: 10px 8%;
+            position: relative;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .card {
+            margin: 10px;
+            width: 18rem;
+        }
+        .card-img-top {
+            height: 200px;
+            width: auto;
+            border: 2px solid black;
+            transition: border-color 0.3s ease;
+        }
+        .card:hover .card-img-top {
+            border-color: red;
+             /* Change border color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div class="back">
+        <h1 style="text-align: center;color:yellow;font-size: 50px;"><b>Select wallpaper</b></h1>
+        <hr style="margin-bottom: 100px;">
+        <a href="field.html">
+        <img src="arrow.jpg" alt="Previous" style="width: 50px; height: 50px;position: relative;bottom:200px;">
+        <div class="image-container">
+            <div class="card">
+                <a href="field3.html">
+                    <img src="back.jpg" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title"style="color:yellow;font-size: 30px;"><b>Flower </b></h5>
+                </div>
+            </div>
+            <div class="card">
+                <a href="field4.html">
+                    <img src="back2.jpg" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title"style="color:yellow;font-size: 30px;"><b>Heart</b></h5>
+                </div>
+            </div>
+            <div class="card">
+                <a href="field5.html">
+                    <img src="back3.jpg" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title" style="color:yellow;font-size: 30px;"><b>Green heart</b></h5>
+                </div>
+            </div>
+            <div class="card">
+                <a href="field6.html">
+                    <img src="back4.jpg" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title" style="color:yellow;font-size: 30px;"><b>Rainbow</b></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  
+</body>
+</html>
